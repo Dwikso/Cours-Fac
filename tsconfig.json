@@ -2,6 +2,7 @@
   "extends": "astro/tsconfigs/strict",
   "include": ["src", "styled-system"],
   "compilerOptions": {
-    "strictNullChecks": true
+    "strictNullChecks": false,
+
   }
 }

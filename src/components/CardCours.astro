@@ -1,0 +1,61 @@
+---
+import Tag from "./Tag.astro";;
+import { css } from "../../styled-system/css";
+import { hstack, vstack } from "../../styled-system/patterns";
+
+export interface Props {
+  title: string;
+  href: string;
+  description: string;
+  tags: string[];
+  date: Date;
+}
+
+const { title, href, description, tags , date } = Astro.props;
+
+const coursContainerStyle = css({
+  w: "full",
+  p: "5",
+  border: "2px solid black",
+  borderRadius: "sm",
+  m: 0,
+});
+
+const linkStyle = vstack({
+  w: "full",
+  justifyContent: "flex-start",
+  alignItems: "flex-start",
+  gap: "4",
+});
+
+const titleStyle = css({
+  textStyle: "heading4",
+});
+
+const descriptionStyle = css({
+  textStyle: "body",
+  color: "neutral.600",
+});
+
+const tagListStyle = hstack({
+  flexWrap: "wrap",
+});
+---
+
+<article class={coursContainerStyle}>
+  <a href={href} class={linkStyle}>
+    <h3 class={titleStyle}>
+      {title}
+    </h3>
+    <p class={descriptionStyle}>{description}</p>
+    <ul class={tagListStyle}>
+      {
+        tags.map((tag) => (
+          <li>
+            <Tag name={tags.tag} />
+          </li>
+        ))
+      }
+    </ul>
+  </a>
+</article>
