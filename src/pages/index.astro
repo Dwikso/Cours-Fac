@@ -23,13 +23,13 @@ const posts = (await getCollection("blog")).sort(
     gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
   })}>
   {
-      posts.map((posts) => (
+      posts.map((entry) => (
           <CardCours
-            title={posts.data.title}
-            date={posts.data.pubDate}
-            description={posts.data.description}
-            tags={posts.data.tags}
-            href={posts.path}
+            title={entry.data.title}
+            date={entry.data.pubDate}
+            description={entry.data.description}
+            tags={entry.data.tags}
+            href={`/blog/${entry.slug}/`}
           />
       ))
   }
