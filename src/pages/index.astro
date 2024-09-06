@@ -20,7 +20,13 @@ const posts = (await getCollection("blog")).sort(
     display: "grid",
     padding: "1rem",
     gap: "1rem",
-    gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+    gridTemplateColumns: {
+      base: '1fr',
+      sm: 'repeat(2, 1fr)', 
+      md: 'repeat(3, 1fr)', 
+      lg: 'repeat(4, 1fr)', 
+      xl: 'repeat(auto-fit, minmax(300px, 1fr))',
+    },
   })}>
   {
       posts.map((entry) => (
