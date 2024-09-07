@@ -14,20 +14,11 @@ const posts = (await getCollection("blog")).sort(
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="" href="../index.css">
   </head>
   <body>
-  <div class={css({
-    display: "grid",
-    padding: "1rem",
-    gap: "1rem",
-    gridTemplateColumns: {
-      base: '1fr',
-      sm: 'repeat(2, 1fr)', 
-      md: 'repeat(3, 1fr)', 
-      lg: 'repeat(4, 1fr)', 
-      xl: 'repeat(auto-fit, minmax(300px, 1fr))',
-    },
-  })}>
+  <div class="grid-container">
   {
       posts.map((entry) => (
           <CardCours
