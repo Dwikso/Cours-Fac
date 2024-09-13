@@ -4,3 +4,112 @@ description: Programmation Web
 tags: [Web, CSS, HTML, JavaScript]
 pubDate: 06/09/2024
 ---
+
+> Les Différent Opérateurs
+
+1. Opérateur artihmétiques
+
+| Opérateurs | Utilisation          |
+| ---------- | -------------------- |
+| +          | Addition             |
+| %          | Reste de la division |
+| ++         | Incrémentation       |
+| --         | Décrémentation       |
+| \*\*       | Exposent             |
+
+2. Opérateurs d'affectation
+
+| Opérateurs | Utilisation                   |
+| ---------- | ----------------------------- |
+| =          | Affectation                   |
+| +=         | Affectation avec Addition     |
+| -=         | Affectation avec Soustraction |
+| /=         | Affectation avec Divition     |
+| %=         | Affectation avec Modulo       |
+| \*\*=      | Affectation avec Exposent     |
+
+3. Opérateurs de comparaison
+
+| Opérateurs | Utilisation          |
+|------------|----------------------|
+| ==         | Égalité              |
+| ===        | Égalité Stricte      |
+| !=         | Différence           |
+| !===       | Différence Stricte   |
+| >          | Supérieur à          |
+| \<          | Inférieur à          |
+| >=         | Supérieur ou égale à |
+| \<=         | Inférieur ou égale à |
+
+> Exemple de Code Javascript utilisant les différent opérateurs
+
+1. Premier exmple
+
+```javascript
+function maxi(n: number, m: number) : number {
+    if (n > m) {
+        return n
+    } else {
+        return m
+    }
+}
+```
+Dans ce premier exemple le code renvoie la maximum entre 2 valeurs en utilisant "l'opérateur de comparaison" <code>></code>
+
+2. Deuxieme exemple
+
+```javascript
+function abs(x: number): number {
+    if(x < 0) {
+        return -x;
+    } else if (x === 0) {
+        return x
+    } else {
+        return x
+    }
+}
+```
+Dans le deuxieme exmple le code renvoie la valeur absolue d'un nombre ici il utilise 2 "opérateurs de comparaison" <code>></code> et <code>===</code>
+
+> Les variables
+
+pour définir une variables il existe 2 manieres de le faire la premier et d'utilise le mot clé <code>let</code> et la deuxieme et d'utiliser le mot clé <code>var</code>.
+
+La différence entre <code>let</code> et <code>var</code> et que <mark>let</mark> a une portée qui est "limitée" a celle du bloc dans le quelle elles sont déclarées tant dit que <mark>var</mark> permet de définir une variables global.
+
+> Les Boucles
+
+Il existe 2 types de boucles les boucles <code>for</code> et les boucles <code>while</code>.
+
+Les différences pour les boucles <code>FOR</code> spécifie explicitement un compteur et une condition de fin qui sont intégrés dans la syntaxe de la boucle, tandis que la boucle <code>WHILE</code> utilise une condition de réitération unique et le compteur doit être modifié manuellement à l'intérieur du bloc de code.
+
+> Exemples de boucles for
+
+```javascript
+function celsiusToFarenhite(n: number, m: number): void {
+    var i = 0;
+    for (i=0; i <=n; i+= m) {
+        console.log((9.0 * i) / 5.0 + 32.0);
+    }
+}
+```
+On peut voir que comme dit précédement le compteur et la condition de fin sont diréctement préciser dans le for.
+
+> Exemple de boucles While
+
+```javascript
+function harm(n : number) : number {
+    var i = 1;
+    var somme = 0;
+    if (n === 0 || n === 1) {
+        return n;
+    } else {
+        while (i <= n) {
+            somme += 1 / i;
+            i++;
+        }
+        return somme;
+    }
+}
+```
+ici la uniquement la condition de fin et inclu dans la boucle et l'incrémentation en dehors de la boucle.

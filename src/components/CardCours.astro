@@ -1,5 +1,5 @@
 ---
-import Tag from "./Tag.astro";;
+import Tag from "./Tag.astro";
 import { css } from "../../styled-system/css";
 import { hstack, vstack } from "../../styled-system/patterns";
 
@@ -11,7 +11,7 @@ export interface Props {
   date: Date;
 }
 
-const { title, href, description, tags , date } = Astro.props;
+const { title, href, description, tags, date } = Astro.props;
 
 const coursContainerStyle = css({
   w: "full",

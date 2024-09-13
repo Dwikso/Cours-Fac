@@ -9,7 +9,6 @@ const blog = defineCollection({
     tags: z.array(z.string()),
     // Transform string to Date object
     pubDate: z.coerce.date(),
-
   }),
 });
 
