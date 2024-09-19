@@ -130,3 +130,91 @@ function harm(n : number) : number {
 
 ici la uniquement la condition de fin et inclu dans la boucle et
 l'incrémentation en dehors de la boucle.
+
+> Les Types de variables
+
+il exxiste plusieurs types de variables
+
+1. Types primitifs
+
+- Boolean : True/False
+- Null : affectation de la valeur null a une variable
+- Undefined : affectation de la valeur undefined a une variable
+- Number : un nombre
+- Chaine de caractères : une chaine de caractères
+
+
+2. Types Objets
+
+- Array : un tableau
+- Fonctions
+- Dates
+- expression régulières
+
+> Numbers 
+
+Codage
+
+-Flottants IEEE 754
+- Grandes valeurs
+- Petite valeurs
+
+Exemples
+
+```js
+0.2 + 0.1 === 0.3 //False
+
+10000000000000000 + 1 === 10000000000000000 //True
+
+1/0 //Infinity
+-1/0 //-Infinity
+```
+
+> Différentes Base
+
+```js
+OxAB34FE //Hexadecimal
+0666 // octal si pas mide strict
+0888 // décimal
+0b10001101 //binaire (ES6)
+0o666 // octal (ES6)
+```
+
+> Chaine de caractères
+
+C'est le même principe qu'en python on utilise <code>""</code> ou alors <code>''</code>
+
+> Unicode
+
+Il associe un nombre a un glyphe (plus petit entité de langage écrit ayant une signification)
+Contient ASCII et Latin-1
+Codages : UTF-8, UTF-16, UTF-32
+
+Exemples
+```js
+var p = "π" // 16 Bit
+var e ="𝑒" // 17 Bit
+
+p.length // 1
+e.length // 2
+```
+
+> Autres opérations
+
+```js
+var str = 'éléphant';
+str.charAt(3);                     // 'p'
+str[3];                             // 'p'
+str.charAt(str.length);             // ''
+str.charCodeAt(0);                  // 233
+str.slice(2, 4);                    // 'ép'
+str.slice('-3');                    // 'ant'
+str.indexOf('é');                   // 0
+str.indexOf('Z');                   // -1
+str.lastIndexOf('é');               // 2
+str.indexOf('é', 1);                // 2
+str.split('ph');                    // [ 'élé', 'ant' ]
+str.replace('ph', 'f');             // 'éléfant'
+str.toUpperCase();                  // 'ÉLÉPHANT'
+str.toUpperCase().toLowerCase();    // 'éléphant';
+```
