@@ -15,7 +15,7 @@ pubDate: 06/09/2024
 | %          | Reste de la division |
 | ++         | Incrémentation       |
 | --         | Décrémentation       |
-| \*\*       | Exposent             |
+| \*\*       | Exposant             |
 
 2. Opérateurs d'affectation
 
@@ -24,9 +24,9 @@ pubDate: 06/09/2024
 | =          | Affectation                   |
 | +=         | Affectation avec Addition     |
 | -=         | Affectation avec Soustraction |
-| /=         | Affectation avec Divition     |
+| /=         | Affectation avec Division     |
 | %=         | Affectation avec Modulo       |
-| \*\*=      | Affectation avec Exposent     |
+| \*\*=      | Affectation avec Exposant     |
 
 3. Opérateurs de comparaison
 
@@ -38,12 +38,12 @@ pubDate: 06/09/2024
 | !===       | Différence Stricte   |
 | >          | Supérieur à          |
 | \<         | Inférieur à          |
-| >=         | Supérieur ou égale à |
-| \<=        | Inférieur ou égale à |
+| >=         | Supérieur ou égal à |
+| \<=        | Inférieur ou égal à |
 
-> Exemple de Code Javascript utilisant les différent opérateurs
+> Exemple de Code Javascript utilisant les différents opérateurs
 
-1. Premier exmple
+1. Premier exemple
 
 ```javascript
 function maxi(n: number, m: number) : number {
@@ -55,7 +55,7 @@ function maxi(n: number, m: number) : number {
 }
 ```
 
-Dans ce premier exemple le code renvoie la maximum entre 2 valeurs en utilisant
+Dans ce premier exemple le code renvoi le maximum entre 2 valeurs en utilisant
 "l'opérateur de comparaison" <code>></code>
 
 2. Deuxieme exemple
@@ -72,31 +72,31 @@ function abs(x: number): number {
 }
 ```
 
-Dans le deuxieme exmple le code renvoie la valeur absolue d'un nombre ici il
+Dans le deuxieme exmple le code renvoi la valeur absolue d'un nombre ici il
 utilise 2 "opérateurs de comparaison" <code>></code> et <code>===</code>
 
 > Les variables
 
-pour définir une variables il existe 2 manieres de le faire la premier et
-d'utilise le mot clé <code>let</code> et la deuxieme et d'utiliser le mot clé
+pour définir une variable il existe 2 manieres de le faire la premier et
+d'utiliser le mot clé <code>let</code> et la deuxieme et d'utiliser le mot clé
 <code>var</code>.
 
 La différence entre <code>let</code> et <code>var</code> et que <mark>let</mark>
-a une portée qui est "limitée" a celle du bloc dans le quelle elles sont
-déclarées tant dit que <mark>var</mark> permet de définir une variables global.
+a une porté qui est "limité" a celle du bloc dans lequel il est
+déclaré tantdis que <mark>var</mark> permet de définir une variable globale.
 
 > Les Boucles
 
 Il existe 2 types de boucles les boucles <code>for</code> et les boucles
 <code>while</code>.
 
-Les différences pour les boucles <code>FOR</code> spécifie explicitement un
-compteur et une condition de fin qui sont intégrés dans la syntaxe de la boucle,
+La différence pour la boucle <code>FOR</code> spécifie explicitement un
+compteur et une condition de fin qui est intégrés dans la syntaxe de la boucle,
 tandis que la boucle <code>WHILE</code> utilise une condition de réitération
 unique et le compteur doit être modifié manuellement à l'intérieur du bloc de
 code.
 
-> Exemples de boucles for
+> Exemple de boucle for
 
 ```javascript
 function celsiusToFarenhite(n: number, m: number): void {
@@ -108,9 +108,9 @@ function celsiusToFarenhite(n: number, m: number): void {
 ```
 
 On peut voir que comme dit précédement le compteur et la condition de fin sont
-diréctement préciser dans le for.
+directement précisé dans le for.
 
-> Exemple de boucles While
+> Exemple de boucle While
 
 ```javascript
 function harm(n : number) : number {
@@ -128,18 +128,18 @@ function harm(n : number) : number {
 }
 ```
 
-ici la uniquement la condition de fin et inclu dans la boucle et
+ici uniquement la condition de fin et incluse dans la boucle et
 l'incrémentation en dehors de la boucle.
 
 > Les Types de variables
 
-il exxiste plusieurs types de variables
+ils existes plusieurs types de variables
 
 1. Types primitifs
 
 - Boolean : True/False
-- Null : affectation de la valeur null a une variable
-- Undefined : affectation de la valeur undefined a une variable
+- Null : affectation de la valeur null à une variable
+- Undefined : affectation de la valeur undefined à une variable
 - Number : un nombre
 - Chaine de caractères : une chaine de caractères
 
@@ -149,7 +149,7 @@ il exxiste plusieurs types de variables
 - Array : un tableau
 - Fonctions
 - Dates
-- expression régulières
+- expressions régulières
 
 > Numbers 
 
@@ -182,11 +182,11 @@ OxAB34FE //Hexadecimal
 
 > Chaine de caractères
 
-C'est le même principe qu'en python on utilise <code>""</code> ou alors <code>''</code>
+C'est le même principe qu'en python on utilise <code>" "</code> ou alors <code>' '</code>
 
 > Unicode
 
-Il associe un nombre a un glyphe (plus petit entité de langage écrit ayant une signification)
+Il associe un nombre a un glyphe (plus petite entité de langage écrit ayant une signification)
 Contient ASCII et Latin-1
 Codages : UTF-8, UTF-16, UTF-32
 
