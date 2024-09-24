@@ -30,14 +30,14 @@ pubDate: 06/09/2024
 
 3. Opérateurs de comparaison
 
-| Opérateurs | Utilisation          |
-| :--------- | :------------------- |
-| ==         | Égalité              |
-| ===        | Égalité Stricte      |
-| !=         | Différence           |
-| !===       | Différence Stricte   |
-| >          | Supérieur à          |
-| \<         | Inférieur à          |
+| Opérateurs | Utilisation         |
+| :--------- | :------------------ |
+| ==         | Égalité             |
+| ===        | Égalité Stricte     |
+| !=         | Différence          |
+| !===       | Différence Stricte  |
+| >          | Supérieur à         |
+| \<         | Inférieur à         |
 | >=         | Supérieur ou égal à |
 | \<=        | Inférieur ou égal à |
 
@@ -79,22 +79,23 @@ utilise 2 "opérateurs de comparaison" <code>></code> et <code>===</code>
 
 pour définir une variable il existe 2 manieres de le faire la premier et
 d'utiliser le mot clé <code>let</code> et la deuxieme et d'utiliser le mot clé
+
 <code>var</code>.
 
 La différence entre <code>let</code> et <code>var</code> et que <mark>let</mark>
-a une porté qui est "limité" a celle du bloc dans lequel il est
-déclaré tantdis que <mark>var</mark> permet de définir une variable globale.
+a une porté qui est "limité" a celle du bloc dans lequel il est déclaré tantdis
+que <mark>var</mark> permet de définir une variable globale.
 
 > Les Boucles
 
 Il existe 2 types de boucles les boucles <code>for</code> et les boucles
+
 <code>while</code>.
 
-La différence pour la boucle <code>FOR</code> spécifie explicitement un
-compteur et une condition de fin qui est intégrés dans la syntaxe de la boucle,
-tandis que la boucle <code>WHILE</code> utilise une condition de réitération
-unique et le compteur doit être modifié manuellement à l'intérieur du bloc de
-code.
+La différence pour la boucle <code>FOR</code> spécifie explicitement un compteur
+et une condition de fin qui est intégrés dans la syntaxe de la boucle, tandis
+que la boucle <code>WHILE</code> utilise une condition de réitération unique et
+le compteur doit être modifié manuellement à l'intérieur du bloc de code.
 
 > Exemple de boucle for
 
@@ -128,8 +129,8 @@ function harm(n : number) : number {
 }
 ```
 
-ici uniquement la condition de fin et incluse dans la boucle et
-l'incrémentation en dehors de la boucle.
+ici uniquement la condition de fin et incluse dans la boucle et l'incrémentation
+en dehors de la boucle.
 
 > Les Types de variables
 
@@ -143,7 +144,6 @@ il existe plusieurs types de variables
 - Number : un nombre
 - Chaine de caractères : une chaine de caractères
 
-
 2. Types Objets
 
 - Array : un tableau
@@ -151,70 +151,72 @@ il existe plusieurs types de variables
 - Dates
 - expressions régulières
 
-> Numbers 
+> Numbers
 
 Codage
 
 -Flottants IEEE 754
+
 - Grandes valeurs
 - Petite valeurs
 
 Exemples
 
 ```js
-0.2 + 0.1 === 0.3 //False
+0.2 + 0.1 === 0.3; //False
 
-10000000000000000 + 1 === 10000000000000000 //True
+10000000000000000 + 1 === 10000000000000000; //True
 
-1/0 //Infinity
--1/0 //-Infinity
+1 / 0 - //Infinity
+  1 / 0; //-Infinity
 ```
 
 > Différentes Base
 
 ```js
-OxAB34FE //Hexadecimal
-0666 // octal si pas mide strict
-0888 // décimal
-0b10001101 //binaire (ES6)
-0o666 // octal (ES6)
+OxAB34FE; //Hexadecimal
+0666; // octal si pas mide strict
+0888; // décimal
+0b10001101; //binaire (ES6)
+0o666; // octal (ES6)
 ```
 
 > Chaine de caractères
 
-C'est le même principe qu'en python on utilise <code>" "</code> ou alors <code>' '</code>
+C'est le même principe qu'en python on utilise <code>" "</code> ou alors <code>'
+'</code>
 
 > Unicode
 
-Il associe un nombre a un glyphe (plus petite entité de langage écrit ayant une signification)
-Contient ASCII et Latin-1
-Codages : UTF-8, UTF-16, UTF-32
+Il associe un nombre a un glyphe (plus petite entité de langage écrit ayant une
+signification) Contient ASCII et Latin-1 Codages : UTF-8, UTF-16, UTF-32
 
 Exemples
-```js
-var p = "π" // 16 Bit
-var e ="𝑒" // 17 Bit
 
-p.length // 1
-e.length // 2
+```js
+var p = "π"; // 16 Bit
+var e = "𝑒"; // 17 Bit
+
+p.length; // 1
+e.length; // 2
 ```
 
 > Autres opérations
 
 ```js
-var str = 'éléphant';
-str.charAt(3);                     // 'p'
-str[3];                             // 'p'
-str.charAt(str.length);             // ''
-str.charCodeAt(0);                  // 233
-str.slice(2, 4);                    // 'ép'
-str.slice('-3');                    // 'ant'
-str.indexOf('é');                   // 0
-str.indexOf('Z');                   // -1
-str.lastIndexOf('é');               // 2
-str.indexOf('é', 1);                // 2
-str.split('ph');                    // [ 'élé', 'ant' ]
-str.replace('ph', 'f');             // 'éléfant'
-str.toUpperCase();                  // 'ÉLÉPHANT'
-str.toUpperCase().toLowerCase();    // 'éléphant';
+var str = "éléphant";
+str.charAt(3); // 'p'
+str[3]; // 'p'
+str.charAt(str.length); // ''
+str.charCodeAt(0); // 233
+str.slice(2, 4); // 'ép'
+str.slice("-3"); // 'ant'
+str.indexOf("é"); // 0
+str.indexOf("Z"); // -1
+str.lastIndexOf("é"); // 2
+str.indexOf("é", 1); // 2
+str.split("ph"); // [ 'élé', 'ant' ]
+str.replace("ph", "f"); // 'éléfant'
+str.toUpperCase(); // 'ÉLÉPHANT'
+str.toUpperCase().toLowerCase(); // 'éléphant';
 ```
