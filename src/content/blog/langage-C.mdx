@@ -92,3 +92,92 @@ il existe différents types de variables comme par exemple :
 c'est types peuvent être associer a un préfixe "Unsigned" ou "Signed" Signed :
 peut contenir des nombre négatifs Unsigned : contient uniquement des nombre
 positifs
+
+
+> Les Boucles
+
+
+## Syntaxe d'une boucle
+
+```c
+if (condition) {
+  Bloc d'instruction
+}
+```
+
+- Condition est une expression booléenne (0 pour faux et le reste pour vrai)
+- Si l'évaluation de la condition donne une valeur différente de  0, alors le bloc d'instruction est exécuté.
+- Sinon le bloc d'instruction est ignoré
+
+> Exmples
+
+```c
+#include <stdio.h>
+
+int main() {
+  int nombre;
+  printf("Entrez un nombre : ");
+  scanf("%d", &nombre);
+  
+  if (nombre < 0) {
+    return -nombre
+  } else {
+    return nombre
+  }
+
+  printf("La valeur absolue est %d : ", nombre)
+
+}
+```
+
+
+
+
+
+> Switch
+
+- Le Switch est une instruction de sélection.
+- Ecriture compacte des "if else" en cascade.
+- Très utilisé lors des choix multiples.
+
+> Exmples
+
+```c
+#include <stdio.h>
+
+int main() {
+    int jour;
+
+    printf("Entrez un numéro de jour (1-7): ");
+    scanf("%d", &jour);
+
+    switch (jour) {
+        case 1:
+            printf("Lundi\n");
+            break;
+        case 2:
+            printf("Mardi\n");
+            break;
+        case 3:
+            printf("Mercredi\n");
+            break;
+        case 4:
+            printf("Jeudi\n");
+            break;
+        case 5:
+            printf("Vendredi\n");
+            break;
+        case 6:
+            printf("Samedi\n");
+            break;
+        case 7:
+            printf("Dimanche\n");
+            break;
+        default:
+            printf("Numéro invalide. Entrez un numéro entre 1 et 7.\n");
+            break;
+    }
+
+    return 0;
+}
+```
