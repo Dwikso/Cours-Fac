@@ -130,10 +130,6 @@ int main() {
 }
 ```
 
-
-
-
-
 > Switch
 
 - Le Switch est une instruction de sélection.
@@ -181,3 +177,78 @@ int main() {
     return 0;
 }
 ```
+
+> Condition Ternaire
+
+les condition Ternaire sont une autre façons d'écrire une condition <code>if, else</code> en une seule ligne : en utilisant le format suivant
+
+```
+(condition) ? valeur_si_vrai : valeur_si_faux
+```
+
+- Si la condition est vraie, l'expression retourne <code>valeur_si_vrai</code>
+- Si la condition est faux, l'expression retourne <code>valeur_si_faux</code>
+
+> Exemples
+
+Verifions si un nombre est pair ou impair
+
+Avec une condition <code>if, else</code> :
+
+```c
+#include <stdio.h>
+
+int main() {
+    int nombre = 5;
+    if (nombre % 2 == 0) {
+        printf("Pair\n")
+    } else {
+        printf("Impair\n")
+    }
+    return 0;
+}
+```
+
+Avec une condition ternaire, cela devient plus court :
+
+```c
+#include <stdio.h>
+
+int main() {
+    int nombre = 5;
+    printf("%s\n", (nombre % 2 == 0) ? "Pair" : "Impair");
+    return 0;
+}
+```
+
+
+> Boucle <code>for</code>
+
+Syntaxe :
+
+```c
+for([initialisation]; [condition]; [expression]) {
+    suite d'instructions du for
+}
+```
+
+- Le premier champs contient une initialisation d'une variable de parcours (soyons créatifs et appelons cette variable i)
+- Le deuxieme champs contient la condition d'arrêt de la boucle
+- Le troisième champs contient une opération d'incrémentation, par exemple i++
+
+> Exemple
+
+```c
+#include <stdio.h>
+int main(void){
+    int n, i, somme=0;
+    scanf("%d", &n);
+    for (i=2; i<=n; i=i+2) {
+    somme+=i;
+    }
+    printf ("\n La somme des nombres pairs inférieurs à %d est : %d. \n", n, somme);
+    return(0);
+}
+
+```
+
