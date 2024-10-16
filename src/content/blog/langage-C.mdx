@@ -251,4 +251,38 @@ int main(void){
 }
 
 ```
+> Fonctions
+
+Les sous-programmes sont des fonctions. Ils peuvent être définis indépendamment, et utilisés plus tard.
+- Ils permettent d'améliorer la lisibilité du code.
+- Facilité la détection d'erreurs
+- évite la duplication des codes
+
+Les fonctions disposent :
+- d'une fonctions
+- d'un ensemble de paramètres
+- Le type de la valeur retournée
+- Le corps de la fonction
+
+Syntaxe :
+
+```c
+Type_de_la_fonction identifiant(arg1, arg2) {
+  Corps de la fonction [avec return]
+}
+```
+
+> Exemples : 
+
+```c
+#include <stdio.h>
+
+int absolu (int a) {
+  if (a<0) {
+    return -a;
+  } else {
+    return a;
+  }
+}
+```
 
