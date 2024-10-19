@@ -69,20 +69,20 @@ par exemple :
 - float moyenne;
 - char c;
 
-il est possible d'attribuer plusieur variables au même types :
+Il est possible d'attribuer plusieur variables au même types :
 
 - int i, somme;
 - double moyenne, ecart_type;
 
-il existe plusieur manière d'identifier une variable, elles peuvent commencer
+Il existe plusieur manière d'identifier une variable, elles peuvent commencer
 soit par une lettre majuscule 'A'-'Z' ou minuscule 'a'-'z', ou alors le
 caractère '\_' (blanc souligné, tiret bas ou underscore) ou alors de chiffres
-('0'-'9')
+('0'-'9').
 
-il n'est en revanche pas permis d'utiliser des mots clefs pour définir une
+Il n'est en revanche pas permis d'utiliser des mots clefs pour définir une
 variables (int, return)
 
-il existe différents types de variables comme par exemple :
+Il existe différents types de variables comme par exemple :
 
 - char
 - int
@@ -93,9 +93,7 @@ c'est types peuvent être associer a un préfixe "Unsigned" ou "Signed" Signed :
 peut contenir des nombre négatifs Unsigned : contient uniquement des nombre
 positifs
 
-
 > Les Boucles
-
 
 ## Syntaxe d'une boucle
 
@@ -106,7 +104,8 @@ if (condition) {
 ```
 
 - Condition est une expression booléenne (0 pour faux et le reste pour vrai)
-- Si l'évaluation de la condition donne une valeur différente de  0, alors le bloc d'instruction est exécuté.
+- Si l'évaluation de la condition donne une valeur différente de 0, alors le
+  bloc d'instruction est exécuté.
 - Sinon le bloc d'instruction est ignoré
 
 > Exmples
@@ -118,7 +117,7 @@ int main() {
   int nombre;
   printf("Entrez un nombre : ");
   scanf("%d", &nombre);
-  
+
   if (nombre < 0) {
     return -nombre
   } else {
@@ -180,7 +179,8 @@ int main() {
 
 > Condition Ternaire
 
-les condition Ternaire sont une autre façons d'écrire une condition <code>if, else</code> en une seule ligne : en utilisant le format suivant
+les condition Ternaire sont une autre façons d'écrire une condition <code>if,
+else</code> en une seule ligne : en utilisant le format suivant
 
 ```
 (condition) ? valeur_si_vrai : valeur_si_faux
@@ -221,7 +221,6 @@ int main() {
 }
 ```
 
-
 > Boucle <code>for</code>
 
 Syntaxe :
@@ -232,7 +231,8 @@ for([initialisation]; [condition]; [expression]) {
 }
 ```
 
-- Le premier champs contient une initialisation d'une variable de parcours (soyons créatifs et appelons cette variable i)
+- Le premier champs contient une initialisation d'une variable de parcours
+  (soyons créatifs et appelons cette variable i)
 - Le deuxieme champs contient la condition d'arrêt de la boucle
 - Le troisième champs contient une opération d'incrémentation, par exemple i++
 
@@ -251,14 +251,18 @@ int main(void){
 }
 
 ```
+
 > Fonctions
 
-Les sous-programmes sont des fonctions. Ils peuvent être définis indépendamment, et utilisés plus tard.
+Les sous-programmes sont des fonctions. Ils peuvent être définis indépendamment,
+et utilisés plus tard.
+
 - Ils permettent d'améliorer la lisibilité du code.
 - Facilité la détection d'erreurs
 - évite la duplication des codes
 
 Les fonctions disposent :
+
 - d'une fonctions
 - d'un ensemble de paramètres
 - Le type de la valeur retournée
@@ -272,7 +276,7 @@ Type_de_la_fonction identifiant(arg1, arg2) {
 }
 ```
 
-> Exemples : 
+> Exemples :
 
 ```c
 #include <stdio.h>
@@ -286,3 +290,49 @@ int absolu (int a) {
 }
 ```
 
+> Pointeurs
+
+Un pointeur en C est une variable qui stocke l'adresse mémoire d'une autre
+variable. Plutôt que de contenir directement une valeur, un pointeur contient
+l'emplacement de la mémoire où cette valeur est stockée. Les pointeurs sont
+utilisés pour manipuler des données efficacement, pour passer des arguments par
+référence, et pour travailler avec les tableaux, chaînes de caractères, etc.
+
+## Déclarer un pointeur
+
+```c
+int *p;
+```
+
+L'opérateur <code>&</code> permet de récupérer l'adresse d'une variable
+
+```c
+int a = 5;
+int *p = &a;
+```
+L'opérateur <code>*</code> permet de récupérer l'adresse d'une variable
+
+```c
+printf("%d", *p);
+```
+
+> Exemples
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a = 10;
+    int *p = &a;  // p pointe vers a
+
+    printf("Valeur de a : %d\n", a);      // Affiche 10
+    printf("Adresse de a : %p\n", &a);    // Affiche l'adresse mémoire de a
+    printf("Valeur de p (adresse de a) : %p\n", p); // Affiche l'adresse où p pointe (adresse de a)
+    printf("Valeur à l'adresse pointée par p : %d\n", *p); // Affiche 10, la valeur de a
+
+    *p = 20;  // Change la valeur de a via le pointeur
+
+    printf("Nouvelle valeur de a : %d\n", a); // Affiche 20
+    return 0;
+}
+```
