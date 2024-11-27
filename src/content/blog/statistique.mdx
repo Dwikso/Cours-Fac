@@ -5,6 +5,18 @@ tags: [Maths, Statistique, informatique]
 pubDate: 06/09/2024
 ---
 
+import { Image } from "astro:assets";
+import loiVariable from "/public/img/lois_variable.png";
+import exempleLoiVariable from "/public/img/exemple_lois_variable.png";
+import loiUniforme from "/public/img/loi_uniforme.png";
+import loiBinomiale from '/public/img/loi_binomiale.png'
+import loiUniforme2 from '/public/img/loi_uniforme2.png'
+import airRectangle from '/public/img/air_rectangle.png'
+import loiNormale from '/public/img/loi_normale.png'
+import Latex from "/src/components/Latex.astro";
+
+export const sqrtExpression = "\\sqrt{np(1-p)}";
+
 > Therminologie
 
 - Population : Ensemble d'objets d'une étude statistique
@@ -32,15 +44,94 @@ pubDate: 06/09/2024
 2. Données groupées : Valeur/modalité ~> effectif/fréquence
 3. Données en classes : Valeurs par intervalles ~> effectif/fréquence
 
+> Caractéristiques numériques
+
+Mode (Mo) - Valeur/Modalités dont l'effectif ou la fréquence sont les plus
+élevés
+
+Moyenne (µ, x) - Somme des valeurs observés rapportée au nombre d’observations.
+Calcul.
+
+Médiane (Mé) - Le nombre qui coupe la s´erie statistique en deux parties égales
+
+Quartiles (Q1,Q3) - Les nombres qui coupent la série statistique en deux parties
+25%/75% ou 75%/25%
+
+Etendue - La différence entre la valeur maximale et la valeur minimale.
+
+Ecart interquartile (EI) - Q3 - Q1
+
+Variance (Var) - Elle mesure la dispersion des valeurs autour de la moyenne.
+
+Ecart type ( σ) - Racine de la variance.
+
+> Lois
+
+<Image src={loiVariable} alt="Loi d'une variable" />
+
+> Exemples
+
+<Image src={exempleLoiVariable} alt="Exemple loi variable" />
+
+## Loi Uniforme
+
+<Image src={loiUniforme} alt="Loi Uniforme" />
+
+<Image src={loiUniforme2} alt="Loi Uniforme" />
+
+<Image src={airRectangle} alt="Aire Rectangle" />
+
+## Loi Binomiale
+
+On réalise n expériences de façon indépendante. Chaque expérience possède deux
+issues: succès (probabilité p) échec (probabilité 1-p)
+
+X = nombre de succès X suit la loi binomiale B(n, p): X ∼ B(n, p)
+
+Moyenne = np
+
+Ecart type = <Latex formule={sqrtExpression}  />
+
+
+<Image src={loiBinomiale} alt="Loi Binomiale" />
+
+## Loi Normale
+
+La Société Gear Tire Produit des pneumatiques. Le Kilométrage X est décrit par une loi Normale de moyenne µ = 36.500 et d'écart type σ = 5.000:
+
+N (µ, σ2) = N (36.500, 5.0002)
+
+> Exemples
+
+Question: Quelle est la probabilité que le kilom´etrage d’un pneu ne dépasse 40.000 Km?
+
+Réponse: La probabilité que le kilométrage ne dépasse pas 40.000
+
+Km est 0.7580 ou LOI.NORMALE(40000;36500;5000;1) = 75,8%
+
+## Loi Normale Inverse
+
+La Société Grear Tire produit des pneumatiques. Le kilométrages est décrit par une Loi Normale de moyenne µ 36.500 et d’écart type σ = 5000
+
+Question La Socité Grear Tire veut proposer une garantie qui ne s'applique dans la pratique qu'à 10% des pneus. Quel est le kilométrage qu'elle doit proposer
+
+Réponse: Le kilométrage demandé est LOI.NORMALE.INVERSE(10%; 36500; 5000), qui donne 30.092 Km
+
+<Image src={loiNormale} alt="loi Normale" />
+
 > Commandes
 
-| Commandes                     | Description / Syntaxe                                                                                                   |
-| :---------------------------- | :---------------------------------------------------------------------------------------------------------------------- |
-| SI                            | Verifie une condition / <code>=si(Cellule >=10;"Admis";"Ajourné")</code>                                                |
-| SI(OU)                        | Verifie sois la premier condition sois la deuxieme / <code>=si(ou(Cellule1>=10;Cellules2>=10);"Admis";"Ajourné")</code> |
-| Recherche                     | Recherche une valeur dans une plage de colonne/matrice <code>=RECHERCHE(3; A1:E1; A2:E2)</code>                                                                                                                    |
-| RechercheV                    | RechercheV même principe que Recherche / <code>=RECHERCHE(3; A1:E1; A2:E2)</code>                                                                                         |
-| TEXTE MIXTE                   | Permet de concatener / <code>="Le nombre d'objets vendu par " & Cellule1 & "est de" & Cellule2</code>                                                                                                                         |
-| SOMME.SI                      | Fait la somme en fonction d'une condition / <code>=somme.si(Cellule:Cellule;">0")</code>                                                                                                                       |
-| MéthodeGG                     | Permet de renommer un Tableau pour faciliter l'utilisation                                                                                                                        |
-
+| Commandes                      | Description / Syntaxe                                                                                                   |
+| :----------------------------- | :---------------------------------------------------------------------------------------------------------------------- |
+| SI                             | Verifie une condition / <code>=si(Cellule >=10;"Admis";"Ajourné")</code>                                                |
+| SI(OU)                         | Verifie sois la premier condition sois la deuxieme / <code>=si(ou(Cellule1>=10;Cellules2>=10);"Admis";"Ajourné")</code> |
+| Recherche                      | Recherche une valeur dans une plage de colonne/matrice <code>=RECHERCHE(3; A1:E1; A2:E2)</code>                         |
+| RechercheV                     | RechercheV même principe que Recherche / <code>=RECHERCHE(3; A1:E1; A2:E2)</code>                                       |
+| TEXTE MIXTE                    | Permet de concatener / <code>="Le nombre d'objets vendu par " & Cellule1 & "est de" & Cellule2</code>                   |
+| SOMME.SI                       | Fait la somme en fonction d'une condition / <code>=somme.si(Cellule:Cellule;">0")</code>                                |
+| MéthodeGG                      | Permet de renommer un Tableau pour faciliter l'utilisation                                                              |
+| SOMMEPROD                      |                                                                                                                         |
+| LOI BINOMIALE Quand P(X=k)     | <code>LOI.BINOMIALE(k;n;p;0)</code>                                                                                     |
+| LOI BINOMIALE Quand P( X =< k) | <code>LOI.BINOMIALE(k;n;p;1)</code>                                                                                     |
+| LOI Normale Quand P( X =< k) | <code>LOI.NORMALE(x;µ;σ;1)</code>                                                                                     |
+| LOI Normale inverse Quand P( X =< k) = P | <code>LOI.NORMALE.INVERSE(P;µ;σ)</code>                                                                                     |

@@ -1,7 +1,7 @@
 ---
 title: Langage C
-description: Ceci est une introduction au langage C
-tags: [Programation, C#]
+description: Langage C
+tags: [Programation, C]
 pubDate: 05/09/2024
 ---
 
@@ -53,7 +53,7 @@ une variables possèdes plusieurs attributes :
 - un type (Char, Int, Float)
 - une donnée
 - une taille mémoire
-  - nombre de "bytes" nécessaures pour stocker les données d"une varaibles
+  - nombre de "bytes" nécessairres pour stocker les données d"une variables
 - une adresse
   - L'emplacement de la variables
   - L'opérateur "&" permet de donner l'adresse d'une variables
@@ -69,20 +69,20 @@ par exemple :
 - float moyenne;
 - char c;
 
-il est possible d'attribuer plusieur variables au même types :
+Il est possible d'attribuer plusieur variables au même types :
 
 - int i, somme;
 - double moyenne, ecart_type;
 
-il existe plusieur manière d'identifier une variable, elles peuvent commencer
+Il existe plusieur manière d'identifier une variable, elles peuvent commencer
 soit par une lettre majuscule 'A'-'Z' ou minuscule 'a'-'z', ou alors le
 caractère '\_' (blanc souligné, tiret bas ou underscore) ou alors de chiffres
-('0'-'9')
+('0'-'9').
 
-il n'est en revanche pas permis d'utiliser des mots clefs pour définir une
-variables (int, return)
+Il n'est en revanche pas permis d'utiliser des mots clefs pour définir une
+variables (<code>int</code>, <code>return</code>)
 
-il existe différents types de variables comme par exemple :
+Il existe différents types de variables comme par exemple :
 
 - char
 - int
@@ -93,9 +93,7 @@ c'est types peuvent être associer a un préfixe "Unsigned" ou "Signed" Signed :
 peut contenir des nombre négatifs Unsigned : contient uniquement des nombre
 positifs
 
-
 > Les Boucles
-
 
 ## Syntaxe d'une boucle
 
@@ -106,7 +104,8 @@ if (condition) {
 ```
 
 - Condition est une expression booléenne (0 pour faux et le reste pour vrai)
-- Si l'évaluation de la condition donne une valeur différente de  0, alors le bloc d'instruction est exécuté.
+- Si l'évaluation de la condition donne une valeur différente de 0, alors le
+  bloc d'instruction est exécuté.
 - Sinon le bloc d'instruction est ignoré
 
 > Exmples
@@ -118,7 +117,7 @@ int main() {
   int nombre;
   printf("Entrez un nombre : ");
   scanf("%d", &nombre);
-  
+
   if (nombre < 0) {
     return -nombre
   } else {
@@ -180,7 +179,8 @@ int main() {
 
 > Condition Ternaire
 
-les condition Ternaire sont une autre façons d'écrire une condition <code>if, else</code> en une seule ligne : en utilisant le format suivant
+les condition Ternaire sont une autre façons d'écrire une condition <code>if,
+else</code> en une seule ligne : en utilisant le format suivant
 
 ```
 (condition) ? valeur_si_vrai : valeur_si_faux
@@ -221,7 +221,6 @@ int main() {
 }
 ```
 
-
 > Boucle <code>for</code>
 
 Syntaxe :
@@ -232,7 +231,8 @@ for([initialisation]; [condition]; [expression]) {
 }
 ```
 
-- Le premier champs contient une initialisation d'une variable de parcours (soyons créatifs et appelons cette variable i)
+- Le premier champs contient une initialisation d'une variable de parcours
+  (soyons créatifs et appelons cette variable i)
 - Le deuxieme champs contient la condition d'arrêt de la boucle
 - Le troisième champs contient une opération d'incrémentation, par exemple i++
 
@@ -251,14 +251,18 @@ int main(void){
 }
 
 ```
+
 > Fonctions
 
-Les sous-programmes sont des fonctions. Ils peuvent être définis indépendamment, et utilisés plus tard.
+Les sous-programmes sont des fonctions. Ils peuvent être définis indépendamment,
+et utilisés plus tard.
+
 - Ils permettent d'améliorer la lisibilité du code.
 - Facilité la détection d'erreurs
 - évite la duplication des codes
 
 Les fonctions disposent :
+
 - d'une fonctions
 - d'un ensemble de paramètres
 - Le type de la valeur retournée
@@ -272,7 +276,7 @@ Type_de_la_fonction identifiant(arg1, arg2) {
 }
 ```
 
-> Exemples : 
+> Exemples :
 
 ```c
 #include <stdio.h>
@@ -286,3 +290,173 @@ int absolu (int a) {
 }
 ```
 
+> Pointeurs
+
+Un pointeur en C est une variable qui stocke l'adresse mémoire d'une autre
+variable. Plutôt que de contenir directement une valeur, un pointeur contient
+l'emplacement de la mémoire où cette valeur est stockée. Les pointeurs sont
+utilisés pour manipuler des données efficacement, pour passer des arguments par
+référence, et pour travailler avec les tableaux, chaînes de caractères, etc.
+
+## Déclarer un pointeur
+
+```c
+int *p;
+```
+
+L'opérateur <code>&</code> permet de récupérer l'adresse d'une variable
+
+```c
+int a = 5;
+int *p = &a;
+```
+
+L'opérateur <code>\*</code> permet d'accéder à la valeur stockée à l'adresse
+pointée par le pointeur.
+
+```c
+printf("%d", *p);
+```
+
+> Exemples
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a = 10;
+    int *p = &a;  // p pointe vers a
+
+    printf("Valeur de a : %d\n", a);      // Affiche 10
+    printf("Adresse de a : %p\n", &a);    // Affiche l'adresse mémoire de a
+    printf("Valeur de p (adresse de a) : %p\n", p); // Affiche l'adresse où p pointe (adresse de a)
+    printf("Valeur à l'adresse pointée par p : %d\n", *p); // Affiche 10, la valeur de a
+
+    *p = 20;  // Change la valeur de a via le pointeur
+
+    printf("Nouvelle valeur de a : %d\n", a); // Affiche 20
+    return 0;
+}
+```
+
+> Opérations Bit à Bit
+
+1 . AND bit à bit (<code>&</code>) Compare chaque bit des dexu nombres, et le
+résultat est 1 seulement si les deux bits sont 1, sinon c'est 0
+
+- Exemples <code>5 & 3</code> -> <code>0101 & 0011 = 0001</code> résultat 1
+
+2 . OR bit à bit (<code>|</code>) Compare chaque bit des deux nombres, et le
+résultat est 1 si au moins un des deux bits est 1, sinon c'est 0 Exemple :
+
+<code>5 | 3 → 0101 | 0011 = 0111</code> (résultat : 7)
+
+3 . XOR bit à bit (<code>^</code>) : Compare chaque bit des deux nombres, et le
+résultat est 1 si les deux bits sont différents, sinon c'est 0. Exemple :
+
+<code>5 ^ 3 → 0101 ^ 0011 = 0110</code> (résultat : 6)
+
+4 . NOT bit à bit (<code>~</code>) : Inverse tous les bits du nombre (les 1
+deviennent 0 et vice versa). Exemple : <code>~5 → ~0101 = 1010</code> (résultat
+: -6 en notation complément à deux)
+
+5 . Décalage à gauche (`<<` ) : Décale les bits vers la gauche d'un certain
+nombre de positions, en remplissant avec des zéros à droite. Exemple : <code>5
+`<<` 1 → 0101 `<<` 1 = 1010</code> (résultat : 10)
+
+6 . Décalage à droite (<code>>></code>) : Décale les bits vers la droite d'un
+certain nombre de positions, en supprimant les bits à droite et en conservant
+les zéros ou les signes à gauche. Exemple : <code>5 >> 1 → 0101 >> 1 =
+0010</code> (résultat : 2)
+
+> Exmples 1 : Vérifier si un nombre est pair ou impair
+
+Pour savoir si un nombre est pair ou impair, vous pouvez utiliser l'opérateur
+AND (<code>&</code>) avec 1. Si le bit de poids faible (le dernier bit) est 1,
+le nombre est impair ; s'il est 0, le nombre est pair.
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    unsigned int n = 5;
+
+    if (n & 1) {  // Vérifie si le dernier bit est 1
+        printf("%u est impair.\n", n);
+    } else {
+        printf("%u est pair.\n", n);
+    }
+
+    return 0;
+}
+```
+
+Explication :
+
+<code>n & 1</code> effectue une comparaison bit à bit entre n et 1. Si le bit de
+poids faible de n est 1, le nombre est impair.
+
+> Exemple 2 : Inverser les bits d'un nombre
+
+Vous pouvez inverser les bits d'un entier à l'aide de l'opérateur NOT
+(<code>~</code>).
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    unsigned int n = 5;  // En binaire : 0101
+    unsigned int result = ~n;  // Inversion des bits
+
+    printf("L'inverse bit à bit de %u est %u.\n", n, result);
+    return 0;
+}
+```
+
+Explication :
+
+Si n = 5 (0101 en binaire), son inverse bit à bit sera
+11111111111111111111111111111010 sur une machine 32 bits, ce qui correspond à -6
+en complément à deux.
+
+> Exemple 3 : Échanger deux bits spécifiques
+
+On peut échanger deux bits spécifiques d'un nombre en utilisant plusieurs
+opérations bit à bit. Voici comment échanger le 1er et le 2e bit (les bits de
+position 0 et 1) d'un entier.
+
+```c
+#include <stdio.h>
+
+unsigned int swapBits(unsigned int n, unsigned int i, unsigned int j) {
+    // Obtenir les valeurs des bits aux positions i et j
+    unsigned int bit1 = (n >> i) & 1;
+    unsigned int bit2 = (n >> j) & 1;
+
+    // Si les deux bits sont déjà identiques, rien à changer
+    if (bit1 == bit2)
+        return n;
+
+    // Sinon, on inverse les deux bits en utilisant XOR
+    n ^= (1 << i);  // Inverse le bit à la position i
+    n ^= (1 << j);  // Inverse le bit à la position j
+
+    return n;
+}
+
+int main(void) {
+    unsigned int n = 5;  // 5 en binaire : 0101
+    unsigned int result = swapBits(n, 0, 1);  // Échanger les bits 0 et 1
+
+    printf("Après échange, le nombre est %u.\n", result);  // Devrait donner 6
+    return 0;
+}
+```
+
+Explication :
+
+- La fonction swapBits échange les bits à deux positions spécifiques i et j.
+- Si les bits sont différents, on utilise XOR (<code>^</code>) pour inverser
+  leur valeur.
+- Dans cet exemple, n = 5 (0101 en binaire). Après l'échange, il devient 6 (0110
+  en binaire).
