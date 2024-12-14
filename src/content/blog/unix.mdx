@@ -5,6 +5,11 @@ tags: [Unix]
 pubDate: 06/09/2024
 ---
 
+import { Image } from "astro:assets";
+import Redirection1 from "/public/img/redirection_1.png"
+import Redirection2 from "/public/img/redirection_2.png"
+import Redirection3 from "/public/img/redirection_3.png"
+
 > Navigation dans l'arborescence
 
 <code>Pwd</code> Affiche le chemin absolue
@@ -65,3 +70,33 @@ pubDate: 06/09/2024
 <code> find -name Documents/courrier.txt</code> L'options <code>-name</code> permet de rechercher par nom
 
 <code>find Documents/ -type d</code>
+
+<code>which</code> permet de trouver un fichier ou un Dossiers
+
+<code>which echo</code> Donnera /usr/bin/echo
+
+Recherche dans un fichier
+
+La commande <code>grep</code>(Global Expression Print) permet de rechercher un motif (une chaîne de caractères) dans un fichier
+
+<code>grep 'texte' fichier.txt</code> Affichera toutes les lignes qui contiennent l'expression 'texte'
+
+<code>grep -v 'texte' fichier.txt</code> Affichera toutes les lignes qui ne contiennent pas 'texte'
+
+<code>grep '^[A-Z]' fichier.txt</code> affiche toutes les lignes qui commence par une majuscule
+
+<code>grep '\b\w*logie\b' fichier.txt</code> Affichera tous les mots de fichier.txt qui se terminent par logie
+
+<code>grep -n 'main' /home/Documents/*</code> donneras tous les fichier dans Documents contenant l'expression "main" avec le numéro de ligne de cette expression
+
+<code> grep -c 'main' /home/Documents</code> donneras tous les fichier dans Documents contenant l'expression "main" avec le nombre d'occurences de cette expression
+
+<code>sort</code> permet de trier les lignes d'un fichiers
+
+<code>wc</code> (Word Counting) permet de compter le nombre de lignes, de mots et d'octets d'un fichier
+
+<code>wc -l fichier</code> Pour afficher uniquement le nombre de lignes de fichier
+
+<Image src={Redirection1} alt="redirection unix" />
+<Image src={Redirection2} alt="redirection unix" />
+<Image src={Redirection3} alt="redirection unix" />
